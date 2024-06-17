@@ -3,6 +3,17 @@
 ## Overview
 This API enables the management and retrieval of user/case data from a JSON-based storage system. It supports functionalities like searching, sorting, filtering by status, and pagination.
 
+## Installation
+```
+npm install
+```
+
+## Running
+```
+node server.js
+```
+
+
 ## Base URL
 Access the API locally:
 
@@ -70,6 +81,8 @@ Optional:
 
 ##### Sample Call
 curl -X GET "http://localhost:3000/requests?search=Joe&sort=requestCreated&order=asc&page=1&limit=10&status=Pending"
+
+
 
 ### 2. Update Case Status
 
