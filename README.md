@@ -68,4 +68,69 @@ Optional:
 #### Sample Call
 curl -X GET "http://localhost:3000/requests?search=Joe&sort=requestCreated&order=asc&page=1&limit=10&status=Pending"
 
+
+### 2. Update Case Status Endpoint Documentation
+
+#### Overview
+This endpoint allows clients to update the status of one or more cases. It accepts an array of case IDs and a new status to apply to these cases.
+
+#### Endpoint Information
+
+**URL**: `PUT /update-status`
+
+#### Request Details
+
+#### HTTP Method
+```
+PUT
+```
+
+#### Request Body
+The request body must include a JSON object with two properties: `ids` and `status`. `ids` is an array of integers that represent the IDs of the cases you wish to update, and `status` is a string indicating the new status for these cases.
+
+#### Example Request Body
+```json
+{
+  "ids": [1, 2, 3],
+  "status": "Accepted"
+}
+```
+
+#### Parameters
+- **ids** (`array` of `integer`): Case IDs to be updated.
+- **status** (`string`): The new status to assign to the specified cases.
+
+#### Responses
+
+#### Success Response
+- **Code**: 200 OK
+- **Content**:
+  ```json
+  {
+    "message": "Case status updated successfully.",
+    "updatedCount": 3
+  }
+  ```
+
+#### Error Responses
+- **Code**: 400 Bad Request
+- **Content**:
+  ```json
+  {
+    "error": "Invalid request data. Please check the `ids` and `status` fields."
+  }
+  ```
+- **Code**: 500 Internal Server Error
+- **Content**:
+  ```json
+  {
+    "error": "Failed to update case status due to a server error."
+  }
+  ```
+
+#### Example Curl Command
+Use the following curl command to invoke this endpoint:
+```bash
+curl -X PUT http://localhost:3000/update-status      -H "Content-Type: application/json"      -d '{"ids": [1, 2, 3], "status": "Accepted"}'
+
   
