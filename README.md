@@ -15,7 +15,7 @@ http://localhost:3000
 Fetch a list of cases with options for searching, sorting, pagination, and status-based filtering.
 
 #### URL
-/cases
+/requests
 
 #### Method
 GET
