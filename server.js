@@ -31,8 +31,21 @@ async function saveData(data) {
 // Sort helper function
 const sortData = (data, field, order = 'asc') => {
   return data.sort((a, b) => {
-    if (a[field] < b[field]) return order === 'asc' ? -1 : 1;
-    if (a[field] > b[field]) return order === 'asc' ? 1 : -1;
+    const valueA = a[field];
+    const valueB = b[field];
+
+    // Check if the values can be converted to valid dates
+    const dateA = new Date(valueA);
+    const dateB = new Date(valueB);
+
+    if (!isNaN(dateA) && !isNaN(dateB)) {
+      if (dateA < dateB) return order === 'asc' ? -1 : 1;
+      if (dateA > dateB) return order === 'asc' ? 1 : -1;
+      return 0;
+    }
+
+    if (valueA < valueB) return order === 'asc' ? -1 : 1;
+    if (valueA > valueB) return order === 'asc' ? 1 : -1;
     return 0;
   });
 };
@@ -107,3 +120,4 @@ app.put('/update-status', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
