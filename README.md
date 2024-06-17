@@ -14,11 +14,14 @@ http://localhost:3000
 
 Fetch a list of cases with options for searching, sorting, pagination, and status-based filtering.
 
-#### URL
-/requests
+**URL**: `/requests`
 
-#### Method
+### Request Details
+
+#### HTTP Method
+```
 GET
+```
 
 #### URL Parameters
 
@@ -76,7 +79,7 @@ This endpoint allows clients to update the status of one or more cases. It accep
 
 #### Endpoint Information
 
-**URL**: `PUT /update-status`
+**URL**: `/update-status`
 
 #### Request Details
 
@@ -86,18 +89,18 @@ PUT
 ```
 
 #### Request Body
-The request body must include a JSON object with two properties: `ids` and `status`. `ids` is an array of integers that represent the IDs of the cases you wish to update, and `status` is a string indicating the new status for these cases.
+The request body must include a JSON object with two properties: `ids` and `status`. `ids` is an array of strings that represent the IDs of the cases you wish to update, and `status` is a string indicating the new status for these cases.
 
 #### Example Request Body
 ```json
 {
-  "ids": [1, 2, 3],
+  "ids": ["aeb02a1f-de51-41fe-9dd7-eb5e1fb43854", "c95a4f2f-ce51-4c0e-88e9-43f67fe7ae94"],
   "status": "Accepted"
 }
 ```
 
 #### Parameters
-- **ids** (`array` of `integer`): Case IDs to be updated.
+- **ids** (`array` of `strings`): Case IDs to be updated.
 - **status** (`string`): The new status to assign to the specified cases.
 
 #### Responses
@@ -131,6 +134,6 @@ The request body must include a JSON object with two properties: `ids` and `stat
 #### Example Curl Command
 Use the following curl command to invoke this endpoint:
 ```bash
-curl -X PUT http://localhost:3000/update-status      -H "Content-Type: application/json"      -d '{"ids": [1, 2, 3], "status": "Accepted"}'
+curl -X PUT http://localhost:3000/update-status      -H "Content-Type: application/json"      -d '{"ids": ["aeb02a1f-de51-41fe-9dd7-eb5e1fb43854", "c95a4f2f-ce51-4c0e-88e9-43f67fe7ae94"], "status": "Accepted"}'
 
   
