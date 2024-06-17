@@ -88,8 +88,7 @@ Optional:
 ##### Sample Call
 ```bash
 curl -X GET "http://localhost:3000/requests?search=Joe&sort=requestCreated&order=asc&page=1&limit=10&status=Pending"
-
-
+```
 
 ### 2. Update Case Status
 
@@ -151,5 +150,5 @@ The request body must include a JSON object with two properties: `ids` and `stat
 Use the following curl command to invoke this endpoint:
 ```bash
 curl -X PUT http://localhost:3000/update-status      -H "Content-Type: application/json"      -d '{"ids": ["aeb02a1f-de51-41fe-9dd7-eb5e1fb43854", "c95a4f2f-ce51-4c0e-88e9-43f67fe7ae94"], "status": "Accepted"}'
-
+```
   
