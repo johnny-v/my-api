@@ -71,27 +71,23 @@ Optional:
 ##### Sample Call
 curl -X GET "http://localhost:3000/requests?search=Joe&sort=requestCreated&order=asc&page=1&limit=10&status=Pending"
 
-
 ### 2. Update Case Status Endpoint Documentation
 
-#### Overview
 This endpoint allows clients to update the status of one or more cases. It accepts an array of case IDs and a new status to apply to these cases.
-
-#### Endpoint Information
 
 **URL**: `/update-status`
 
 #### Request Details
 
-#### HTTP Method
+##### HTTP Method
 ```
 PUT
 ```
 
-#### Request Body
+##### Request Body
 The request body must include a JSON object with two properties: `ids` and `status`. `ids` is an array of strings that represent the IDs of the cases you wish to update, and `status` is a string indicating the new status for these cases.
 
-#### Example Request Body
+##### Example Request Body
 ```json
 {
   "ids": ["aeb02a1f-de51-41fe-9dd7-eb5e1fb43854", "c95a4f2f-ce51-4c0e-88e9-43f67fe7ae94"],
@@ -99,13 +95,13 @@ The request body must include a JSON object with two properties: `ids` and `stat
 }
 ```
 
-#### Parameters
+##### Parameters
 - **ids** (`array` of `strings`): Case IDs to be updated.
 - **status** (`string`): The new status to assign to the specified cases.
 
-#### Responses
+##### Responses
 
-#### Success Response
+##### Success Response
 - **Code**: 200 OK
 - **Content**:
   ```json
@@ -115,7 +111,7 @@ The request body must include a JSON object with two properties: `ids` and `stat
   }
   ```
 
-#### Error Responses
+##### Error Responses
 - **Code**: 400 Bad Request
 - **Content**:
   ```json
@@ -131,7 +127,7 @@ The request body must include a JSON object with two properties: `ids` and `stat
   }
   ```
 
-#### Example Curl Command
+##### Example Curl Command
 Use the following curl command to invoke this endpoint:
 ```bash
 curl -X PUT http://localhost:3000/update-status      -H "Content-Type: application/json"      -d '{"ids": ["aeb02a1f-de51-41fe-9dd7-eb5e1fb43854", "c95a4f2f-ce51-4c0e-88e9-43f67fe7ae94"], "status": "Accepted"}'
