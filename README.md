@@ -16,14 +16,14 @@ Fetch a list of cases with options for searching, sorting, pagination, and statu
 
 **URL**: `/requests`
 
-### Request Details
+#### Request Details
 
-#### HTTP Method
+##### HTTP Method
 ```
 GET
 ```
 
-#### URL Parameters
+##### URL Parameters
 
 Optional:
 - `search=[string]`: Search keyword across all textual fields.
@@ -33,7 +33,7 @@ Optional:
 - `limit=[integer]`: Number of items per page.
 - `status=[string]`: Filter cases by their status (e.g., 'Pending', 'Accepted', 'Rejected'). Not passing status returns all cases.
 
-#### Success Response
+##### Success Response
 - **Code:** 200 OK
 - **Content:**
   ```json
@@ -68,7 +68,7 @@ Optional:
     ]
   }
 
-#### Sample Call
+##### Sample Call
 curl -X GET "http://localhost:3000/requests?search=Joe&sort=requestCreated&order=asc&page=1&limit=10&status=Pending"
 
 
