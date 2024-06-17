@@ -71,7 +71,7 @@ Optional:
 ##### Sample Call
 curl -X GET "http://localhost:3000/requests?search=Joe&sort=requestCreated&order=asc&page=1&limit=10&status=Pending"
 
-### 2. Update Case Status Endpoint Documentation
+### 2. Update Case Status
 
 This endpoint allows clients to update the status of one or more cases. It accepts an array of case IDs and a new status to apply to these cases.
 
