@@ -66,6 +66,6 @@ Optional:
   }
 
 #### Sample Call
-curl -X GET "http://localhost:3000/requests?search=Joe&sort=status&order=asc&page=1&limit=10&status=Pending"
+curl -X GET "http://localhost:3000/requests?search=Joe&sort=requestCreated&order=asc&page=1&limit=10&status=Pending"
 
   
