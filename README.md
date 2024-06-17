@@ -6,8 +6,8 @@ This API enables the management and retrieval of user/case data from a JSON-base
 ## Prerequisites
 Before setting up the project, ensure you have the following installed:
 
-Node.js (at least Node 18 or later)
-NPM (Node Package Manager)
+- Node.js (at least Node 18 or later)
+- NPM (Node Package Manager)
 
 ## Installation
 ```
