@@ -59,35 +59,33 @@ Optional:
     "page": 1,
     "limit": 10,
     "data": [
-          "priority": "Routine",
-          "caseID": "e226fff7-8441-413a-ae4f-c0a6c9712914",
-          "patient": "Joe Merrifield",
-          "requestMessage": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
-          "type": "Missing material",
-          "subType": "IHC",
-          "status": "Rejected",
-          "requestCreated": "1/18/2024",
-          "lastUpdated": "3/5/2024",
-          "requestExported": "12/25/2023"
-      {
-          "priority": "Routine",
-          "caseID": "390f0b8e-4f3f-4a58-814f-eb373a6ee70e",
-          "patient": "Donetta Morden",
-          "requestMessage": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
-          "type": "Rescan",
-          "subType": "Molecular tests",
-          "status": "Accepted",
-          "requestCreated": "3/29/2024",
-          "lastUpdated": "2/20/2024",
-          "requestExported": "9/9/2023"
-      }
+          {
+    "caseName": "2095",
+    "priority": "High",
+    "assignee": "Cort Bowller",
+    "description": "Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+    "status": "In Progress",
+    "type": "Clinical Chemistry",
+    "dateCreated": "12/16/2023",
+    "lastUpdated": "10/10/2023"
+  },
+  {
+    "caseName": "3401",
+    "priority": "Low",
+    "assignee": "Laura Morsley",
+    "description": "Morbi porttitor lorem id ligula.",
+    "status": "Accepted",
+    "type": "Clinical Chemistry",
+    "dateCreated": "9/15/2023",
+    "lastUpdated": "9/9/2023"
+  },
       // additional cases
     ]
   }
 
 ##### Sample Call
 ```bash
-curl -X GET "http://localhost:3000/requests?search=Joe&sort=requestCreated&order=asc&page=1&limit=10&status=Pending"
+curl -X GET "http://localhost:3000/requests?search=Joe&sort=requestCreated&order=asc&page=1&limit=10&status=In%20Progress"
 ```
 
 ### 2. Update Case Status
@@ -109,7 +107,7 @@ The request body must include a JSON object with two properties: `ids` and `stat
 ##### Example Request Body
 ```json
 {
-  "ids": ["aeb02a1f-de51-41fe-9dd7-eb5e1fb43854", "c95a4f2f-ce51-4c0e-88e9-43f67fe7ae94"],
+  "ids": ["2095", "3401"],
   "status": "Accepted"
 }
 ```
