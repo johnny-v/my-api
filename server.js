@@ -103,7 +103,7 @@ app.put('/update-status', async (req, res) => {
 
   let updatedCount = 0;
   data.forEach(item => {
-    if (ids.includes(item.caseID)) {
+    if (ids.includes(item.caseName)) {
       item.status = status;
       updatedCount++;
     }
